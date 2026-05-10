@@ -15,8 +15,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
     </div>
 
-    <form name="contact" method="POST" action="/.netlify/functions/contact" class="border border-line bg-white p-6 sm:p-8">
+    <form name="contact" method="POST" action="/contact?status=success" data-netlify="true" netlify-honeypot="bot-field" class="border border-line bg-white p-6 sm:p-8">
       <input type="hidden" name="form-name" value="contact" />
+      <p class="hidden">
+        <label>
+          Do not fill this out if you are human:
+          <input name="bot-field" />
+        </label>
+      </p>
       <div class="grid gap-6">
         <p id="contact-success" hidden class="border border-line bg-paper p-4 text-sm leading-6 text-ink">Thank you. Your message has been sent. We will review it and respond as soon as possible.</p>
         <p id="contact-error" hidden class="border border-accent bg-paper p-4 text-sm leading-6 text-ink">Something went wrong and your message could not be sent. Please try again or contact us directly by email.</p>
