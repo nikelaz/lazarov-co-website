@@ -1,0 +1,54 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+---
+
+<BaseLayout title="Products — Lazarov & Co Ltd." description="Explore software products by Lazarov & Co Ltd., built with a focus on performance, reliability, native user experience, and long-term support.">
+  <section class="container py-20">
+    <p class="mb-6 text-xs font-semibold uppercase tracking-[0.24em] text-accent">Products</p>
+    <h1 class="font-serif text-6xl leading-tight text-ink sm:text-7xl">Products</h1>
+    <p class="mt-8 max-w-3xl text-xl leading-9 text-muted">Lazarov &amp; Co Ltd. builds and supports software products designed to solve focused problems with speed, reliability, and care. Each product has its own purpose, website, documentation, and support path where applicable.</p>
+  </section>
+
+  <section class="border-y border-line bg-white">
+    <div class="container py-20">
+      <article class="grid gap-10 lg:grid-cols-[0.7fr_1.3fr]">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.22em] text-accent">In native rewrite</p>
+          <h2 class="mt-5 font-serif text-5xl text-ink">Budget Warden</h2>
+        </div>
+        <div>
+          <p class="text-2xl leading-9 text-ink">A personal finance and budgeting application for tracking money with clarity and control.</p>
+          <div class="mt-6 space-y-6 leading-8 text-muted">
+            <p>Budget Warden helps users understand and manage their personal finances through structured budgeting and transaction tracking. The current public website remains available, but the product is being rewritten as a native-first local application so it can better match the company’s standards for performance, reliability, and maintainability.</p>
+            <p>The new version is being built around a C core with native applications for each platform. macOS and iOS are first, with Android and Windows planned to follow shortly. The rewritten app is intended to be commercial software sold as a one-time purchase.</p>
+            <p>The new source-available codebase is published on GitHub so customers and developers can study the implementation, audit the code, and follow the migration as it develops.</p>
+          </div>
+          <dl class="mt-10 grid gap-px border border-line bg-line sm:grid-cols-3">
+            <div class="bg-white p-5">
+              <dt class="text-xs uppercase tracking-[0.16em] text-muted">Platforms</dt>
+              <dd class="mt-2 text-ink">macOS and iOS first. Android and Windows to follow.</dd>
+            </div>
+            <div class="bg-white p-5">
+              <dt class="text-xs uppercase tracking-[0.16em] text-muted">Status</dt>
+              <dd class="mt-2 text-ink">Native rewrite in progress</dd>
+            </div>
+            <div class="bg-white p-5">
+              <dt class="text-xs uppercase tracking-[0.16em] text-muted">Commercial model</dt>
+              <dd class="mt-2 text-ink">One-time purchase</dd>
+            </div>
+          </dl>
+          <div class="mt-10 flex flex-wrap gap-4">
+            <a href="https://budgetwarden.com" class="bg-ink px-6 py-3 text-sm font-medium text-paper transition hover:bg-accent">Visit product website</a>
+            <a href="https://github.com/nikelaz/budget-warden-next" class="border border-line px-6 py-3 text-sm font-medium text-ink transition hover:border-ink">View source repo</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="container py-20">
+    <SectionHeading title="Product support" intro="Each product has its own website and support path. For product-specific help, visit the product website linked above. For company-level questions, use the contact page." />
+    <a href="/contact" class="mt-10 inline-block border-b border-accent pb-1 text-sm font-semibold text-ink">Contact Lazarov &amp; Co Ltd.</a>
+  </section>
+</BaseLayout>

@@ -1,0 +1,30 @@
+---
+const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
+const nav = [
+  { href: '/', label: 'Company' },
+  { href: '/products', label: 'Products' },
+  { href: '/contact', label: 'Contact' },
+];
+---
+
+<header class="border-b border-line bg-paper/95">
+  <div class="container flex flex-wrap items-center justify-between gap-5 py-5">
+    <a href="/" class="font-serif text-2xl tracking-normal text-ink" aria-label="Lazarov & Co Ltd. home">
+      Lazarov &amp; Co
+    </a>
+    <nav aria-label="Main navigation" class="order-3 flex w-full items-center gap-5 overflow-x-auto text-muted md:order-2 md:w-auto md:gap-8">
+      {nav.map((item) => {
+        const itemPath = item.href.replace(/\/$/, '') || '/';
+        const active = currentPath === itemPath;
+        return (
+          <a class:list={['transition hover:text-ink', active && 'text-ink']} href={item.href}>
+            {item.label}
+          </a>
+        );
+      })}
+    </nav>
+    <a href="/contact" class="order-2 border border-ink px-4 py-2 text-sm text-ink transition hover:bg-ink hover:text-paper md:order-3">
+      Contact
+    </a>
+  </div>
+</header>

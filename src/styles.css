@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --font-serif: Georgia, "Times New Roman", serif;
+  --color-paper: #f8f7f4;
+  --color-ink: #191817;
+  --color-muted: #66625c;
+  --color-prose: #4d4944;
+  --color-line: #ded8cf;
+  --color-accent: #7b2636;
+  --color-panel: #efede8;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: white;
+}
+
+.container {
+  width: 100%;
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+.container-narrow {
+  max-width: 56rem;
+}
+
+@media (min-width: 40rem) {
+  .container {
+    padding-inline: 2rem;
+  }
+}
+
+.prose-page h2 {
+  margin-bottom: 1.2rem;
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 2vw, 2.5rem);
+  line-height: 1.1;
+}
+
+.prose-page h3 {
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.prose-page p {
+  margin-bottom: 1rem;
+}
+
+.prose-page p,
+.prose-page li {
+  color: var(--color-prose);
+  line-height: 1.8;
+}
+
+.prose-page ul {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.5rem;
+}

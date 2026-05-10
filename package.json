@@ -1,0 +1,19 @@
+{
+  "name": "lazarov-co-website",
+  "version": "1.0.0",
+  "description": "Lazarov & Co Ltd. company website",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENSED",
+  "type": "module",
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.3.0",
+    "astro": "^6.1.6",
+    "tailwindcss": "^4.1.17"
+  }
+}

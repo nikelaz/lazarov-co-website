@@ -1,0 +1,31 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Lazarov & Co Ltd. builds fast, reliable native software products with careful engineering and long-term maintainability.' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={new URL(Astro.url.pathname, 'https://lazarovco.com')} />
+    <title>{title}</title>
+    <script data-goatcounter="https://lazarovco.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  </head>
+  <body class="min-h-screen font-sans antialiased">
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

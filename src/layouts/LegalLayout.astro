@@ -1,0 +1,19 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<BaseLayout title={`${title} — Lazarov & Co Ltd.`}>
+  <section class="container container-narrow py-20">
+    <p class="mb-6 text-xs font-semibold uppercase tracking-[0.24em] text-accent">Legal</p>
+    <h1 class="font-serif text-5xl leading-tight text-ink sm:text-7xl">{title}</h1>
+    <div class="prose-page mt-12">
+      <slot />
+    </div>
+  </section>
+</BaseLayout>

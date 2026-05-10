@@ -1,0 +1,97 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+---
+
+<BaseLayout title="Lazarov & Co Ltd. — Native Software Built with Care" description="Lazarov & Co Ltd. builds fast, reliable native desktop and mobile software products with a focus on performance, stability, and long-term maintainability.">
+  <section class="container items-center gap-12 py-16 lg:py-20">
+    <div>
+      <p class="mb-6 text-xs font-semibold uppercase tracking-[0.24em] text-accent">Native software. Built with care.</p>
+      <h1 class="font-serif text-4xl leading-[1.02] text-ink lg:text-6xl">
+        Fast, Reliable Software
+      </h1>
+      <p class="mt-8 text-xl leading-9 text-muted">
+        We strive to build performant, reliable, and simple software that respects the hardware it runs on.
+      </p>
+      <p class="text-xl leading-9 text-muted">
+        Performance is a core feature, not an afterthought.
+      </p>
+      <div class="mt-10 flex flex-wrap gap-4">
+        <a href="/products" class="bg-ink px-6 py-3 text-sm font-medium text-paper transition hover:bg-accent">View products</a>
+        <a href="/contact" class="border border-line px-6 py-3 text-sm font-medium text-ink transition hover:border-ink">Contact us</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-y border-line bg-white">
+    <div class="container grid gap-12 py-20 lg:grid-cols-[0.8fr_1.2fr]">
+      <SectionHeading eyebrow="Company" title="Software in the opposite direction" />
+      <div class="space-y-7 text-lg leading-9 text-muted">
+        <p>Modern software is often slow, heavy, and less reliable than it should be. We believe software can be better if it prioritizes startup time, resource management, fewer but more reliable features.</p>
+        <p>We started this software company with the aim to build and support long-term native software products that are built on these principles.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container py-24">
+    <SectionHeading eyebrow="What we build" title="Focused applications for real use." intro="We build native desktop and mobile applications with platform-specific technologies and a careful approach to dependencies, architecture, and long-term support." />
+    <div class="mt-12 grid gap-px overflow-hidden border border-line bg-line md:grid-cols-2 lg:grid-cols-3">
+      {['Applications for personal use', 'Tools for professionals', 'Software libraries'].map((item) => (
+        <div class="bg-paper p-6 text-sm font-medium leading-6 text-ink">{item}</div>
+      ))}
+    </div>
+  </section>
+
+  <section class="border-y border-line bg-white">
+    <div class="container py-24">
+      <SectionHeading eyebrow="Engineering approach" title="Small systems that can be understood." />
+      <div class="mt-12 grid gap-8 lg:grid-cols-2">
+        <article class="border-t border-line pt-6">
+          <h2 class="font-serif text-3xl text-ink">Use the platform</h2>
+          <p class="mt-5 leading-8 text-muted">Different platforms have different strengths. Native controls, native accessibility, native interaction patterns, and native performance characteristics matter.</p>
+        </article>
+        <article class="border-t border-line pt-6">
+          <h2 class="font-serif text-3xl text-ink">Keep the core understandable</h2>
+          <p class="mt-5 leading-8 text-muted">A product should not depend on a pile of abstractions that nobody fully understands. We prefer smaller, clearer systems that can be reasoned about and maintained.</p>
+        </article>
+        <article class="border-t border-line pt-6">
+          <h2 class="font-serif text-3xl text-ink">Choose dependencies carefully</h2>
+          <p class="mt-5 leading-8 text-muted">Dependencies affect security, build times, binary size, maintainability, licensing, and long-term risk. We use them when they provide real value.</p>
+        </article>
+        <article class="border-t border-line pt-6">
+          <h2 class="font-serif text-3xl text-ink">Prefer durable technology</h2>
+          <p class="mt-5 leading-8 text-muted">C, Rust, and native platform frameworks are often good choices for software that needs to be fast, reliable, and maintainable over time.</p>
+        </article>
+        <article class="border-t border-line pt-6">
+          <h2 class="font-serif text-3xl text-ink">Support the products we ship</h2>
+          <p class="mt-5 leading-8 text-muted">We provide support, updates, and accountability for the software we publish.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-panel">
+    <div class="container grid gap-12 py-24 lg:grid-cols-[0.85fr_1.15fr]">
+      <SectionHeading eyebrow="Commercial and source-available" title="Fair pricing, visible code." />
+      <div class="space-y-7 text-lg leading-9 text-muted">
+        <p>Our products are commercial software and we try to provide fair, straightforward pricing. The goal is to favor one-time purchases where practical, giving customers useful software without turning every small tool into a recurring subscription, because we believe that's not ethical.</p>
+        <p>Where possible, product source code is made available on GitHub anyone can review and study the real application code, understand engineering tradeoffs. The software remains commercially licensed, but the code can still serve a wider educational purpose and allow our customers to audit the code.</p>
+        <p>We believe good software can support a sustainable business and help people learn at the same time. That balance is part of how we want to build.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container py-28">
+    <div class="max-w-4xl">
+      <div>
+        <p class="mb-5 text-xs font-semibold uppercase tracking-[0.22em] text-accent">Products</p>
+        <h2 class="font-serif text-5xl leading-tight text-ink">Practical software, owned and supported directly.</h2>
+        <p class="mt-7 text-lg leading-9 text-muted">Budget Warden is being rewritten as our first native-first local application, starting with macOS and iOS. The new version is built around a C core, native apps for each platform, source-available code, and a one-time purchase model.</p>
+        <div class="mt-10 flex flex-wrap gap-4">
+          <a href="/products" class="bg-ink px-6 py-3 text-sm font-medium text-paper transition hover:bg-accent">View products</a>
+          <a href="/contact" class="border border-line px-6 py-3 text-sm font-medium text-ink transition hover:border-ink">Ask a question</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

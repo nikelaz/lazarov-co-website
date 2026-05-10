@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Contact — Lazarov & Co Ltd." description="Contact Lazarov & Co Ltd. for product support, business questions, or general inquiries.">
+  <section class="container grid gap-12 py-20 lg:grid-cols-[0.85fr_1.15fr]">
+    <div>
+      <p class="mb-6 text-xs font-semibold uppercase tracking-[0.24em] text-accent">Contact</p>
+      <h1 class="font-serif text-5xl leading-tight text-ink sm:text-7xl">Contact Lazarov &amp; Co Ltd.</h1>
+      <p class="mt-8 text-xl leading-9 text-muted">Use the form for product support, business inquiries, or general questions. For product support, include the product name, platform, version, and a clear description of the issue.</p>
+      <div class="mt-10 border-t border-line pt-8">
+        <p class="text-sm uppercase tracking-[0.16em] text-muted">Direct contact</p>
+        <a class="mt-3 block text-xl text-ink hover:text-accent" href="mailto:nikola@lazarovco.com">nikola@lazarovco.com</a>
+        <p class="mt-6 text-sm leading-7 text-muted">Product-specific support is handled through each product’s own website or support channel. For product help, visit the relevant product website first.</p>
+      </div>
+    </div>
+
+    <form name="contact" method="POST" action="/.netlify/functions/contact" class="border border-line bg-white p-6 sm:p-8">
+      <input type="hidden" name="form-name" value="contact" />
+      <div class="grid gap-6">
+        <p id="contact-success" hidden class="border border-line bg-paper p-4 text-sm leading-6 text-ink">Thank you. Your message has been sent. We will review it and respond as soon as possible.</p>
+        <p id="contact-error" hidden class="border border-accent bg-paper p-4 text-sm leading-6 text-ink">Something went wrong and your message could not be sent. Please try again or contact us directly by email.</p>
+        <label class="grid gap-2 text-sm font-medium text-ink">
+          Name
+          <input required name="name" autocomplete="name" class="border border-line bg-paper px-4 py-3 text-base outline-none focus:border-accent" />
+        </label>
+        <label class="grid gap-2 text-sm font-medium text-ink">
+          Email address
+          <input required type="email" name="email" autocomplete="email" class="border border-line bg-paper px-4 py-3 text-base outline-none focus:border-accent" />
+        </label>
+        <label class="grid gap-2 text-sm font-medium text-ink">
+          Subject
+          <input required name="subject" class="border border-line bg-paper px-4 py-3 text-base outline-none focus:border-accent" />
+        </label>
+        <label class="grid gap-2 text-sm font-medium text-ink">
+          Message
+          <textarea required name="message" rows="8" class="resize-y border border-line bg-paper px-4 py-3 text-base outline-none focus:border-accent"></textarea>
+        </label>
+        <p class="text-sm leading-7 text-muted">We use the information you submit only to respond to your inquiry and provide support where applicable. Do not include passwords, payment card details, or other sensitive information.</p>
+        <button class="w-fit bg-ink px-6 py-3 text-sm font-medium text-paper transition hover:bg-accent" type="submit">Send message</button>
+      </div>
+    </form>
+  </section>
+  <script>
+    const status = new URLSearchParams(window.location.search).get('status');
+    if (status === 'success') document.getElementById('contact-success')?.removeAttribute('hidden');
+    if (status === 'error') document.getElementById('contact-error')?.removeAttribute('hidden');
+  </script>
+</BaseLayout>
