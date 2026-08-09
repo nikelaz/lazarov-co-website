@@ -1,30 +1,107 @@
 ---
+interface Props {
+  compact?: boolean;
+}
+
+const { compact = false } = Astro.props;
 const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
-const nav = [
-  { href: '/', label: 'Company' },
-  { href: '/products', label: 'Products' },
-  { href: '/contact', label: 'Contact' },
-];
+const productsActive = currentPath.startsWith('/products') || currentPath.startsWith('/voice-ready');
 ---
 
-<header class="border-b border-line bg-paper/95">
-  <div class="container flex flex-wrap items-center justify-between gap-5 py-5">
-    <a href="/" class="font-serif text-2xl tracking-normal text-ink" aria-label="Lazarov & Co Ltd. home">
+<header id="site-header" class="relative z-[60] border-b border-line bg-paper/95">
+  <div class:list={['container flex flex-wrap items-center justify-between', compact ? 'gap-3 py-3' : 'gap-5 py-5']}>
+    <a href="/" class:list={['font-serif tracking-normal text-ink', compact ? 'text-lg' : 'text-2xl']} aria-label="Lazarov & Co Ltd. home">
       Lazarov &amp; Co
     </a>
-    <nav aria-label="Main navigation" class="order-3 flex w-full items-center gap-5 overflow-x-auto text-muted md:order-2 md:w-auto md:gap-8">
-      {nav.map((item) => {
-        const itemPath = item.href.replace(/\/$/, '') || '/';
-        const active = currentPath === itemPath;
-        return (
-          <a class:list={['transition hover:text-ink', active && 'text-ink']} href={item.href}>
-            {item.label}
-          </a>
-        );
-      })}
+    <nav aria-label="Main navigation" class:list={['order-3 flex w-full items-center overflow-x-auto text-muted md:order-2 md:w-auto', compact ? 'gap-5 text-sm md:gap-6' : 'gap-5 md:gap-8']}> 
+      <a class:list={['transition hover:text-ink', currentPath === '/' && 'text-ink']} href="/">Company</a>
+      <button id="products-open" class:list={['flex items-center gap-1.5 transition hover:text-ink', productsActive && 'text-ink']} type="button" aria-haspopup="dialog" aria-controls="products-sheet">
+        Products
+        <svg aria-hidden="true" viewBox="0 0 16 16" class="h-3 w-3 fill-none stroke-current"><path d="m4 6 4 4 4-4" stroke-width="1.5" /></svg>
+      </button>
+      <a class:list={['transition hover:text-ink', currentPath === '/contact' && 'text-ink']} href="/contact">Contact</a>
     </nav>
-    <a href="/contact" class="order-2 border border-ink px-4 py-2 text-sm text-ink transition hover:bg-ink hover:text-paper md:order-3">
+    <a href="/contact" class:list={['order-2 border border-ink text-sm text-ink transition hover:bg-ink hover:text-paper md:order-3', compact ? 'px-3 py-1.5' : 'px-4 py-2']}>
       Contact
     </a>
   </div>
 </header>
+
+<div id="products-sheet" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-labelledby="products-sheet-title">
+  <button id="products-backdrop" class="absolute inset-0 cursor-default bg-ink/30 backdrop-blur-[2px]" aria-label="Close product menu"></button>
+  <section id="products-panel" class="absolute inset-x-0 overflow-y-auto border-b border-line bg-paper shadow-2xl">
+    <div class="container py-7 sm:py-9">
+      <div class="mb-6 flex items-center justify-between gap-5">
+        <div class="flex items-baseline gap-4">
+          <h2 id="products-sheet-title" class="font-serif text-3xl text-ink">Our products</h2>
+          <p class="hidden text-sm text-muted sm:block">Focused software, built with care.</p>
+        </div>
+        <button id="products-close" type="button" class="grid h-10 w-10 shrink-0 place-items-center border border-line text-ink transition hover:border-ink" aria-label="Close product menu">
+          <svg aria-hidden="true" viewBox="0 0 24 24" class="h-5 w-5 fill-none stroke-current"><path d="m6 6 12 12M18 6 6 18" stroke-width="1.5" /></svg>
+        </button>
+      </div>
+      <div class="grid gap-4 md:grid-cols-2">
+        <a href="/products/budget-warden" class="group flex gap-5 border border-line bg-paper p-5 transition hover:bg-white sm:p-6">
+          <img src="/images/budget-warden-icon.svg" alt="" class="h-12 w-12 shrink-0 rounded-xl" width="48" height="48" />
+          <span>
+            <span class="flex flex-wrap items-center gap-2 text-xl font-semibold text-ink">Budget Warden <span aria-hidden="true" class="transition group-hover:translate-x-1">→</span></span>
+            <span class="mt-2 block leading-7 text-muted">Private, straightforward budgeting across iPhone, iPad, Mac, and Android.</span>
+          </span>
+        </a>
+        <a href="/voice-ready" class="group flex gap-5 border border-line bg-paper p-5 transition hover:bg-white sm:p-6">
+          <span class="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-[#171719] text-white">
+            <svg aria-hidden="true" viewBox="0 0 24 24" class="h-7 w-7 fill-none stroke-current"><path d="M4 12h2m2-4v8m3-11v14m3-11v8m3-6v4m3-3v2" stroke-width="1.6" stroke-linecap="round" /></svg>
+          </span>
+          <span>
+            <span class="flex min-h-7 flex-wrap items-center gap-2 text-xl font-semibold leading-none text-ink">Voice Ready <span class="inline-flex h-5 translate-y-0.5 items-center text-xs font-medium uppercase leading-none tracking-wider text-muted">Coming soon</span></span>
+            <span class="mt-2 block leading-7 text-muted">Make spoken audio cleaner, balanced, and ready to publish.</span>
+          </span>
+        </a>
+      </div>
+      <div class="mt-6 flex justify-end">
+        <a href="/products" class="border border-ink px-5 py-2.5 text-sm font-medium text-ink transition hover:bg-ink hover:text-paper">View all products</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+  const sheet = document.getElementById('products-sheet');
+  const panel = document.getElementById('products-panel');
+  const header = document.getElementById('site-header');
+  const openButton = document.getElementById('products-open');
+  const closeButton = document.getElementById('products-close');
+  const backdrop = document.getElementById('products-backdrop');
+  let previousFocus: HTMLElement | null = null;
+
+  function positionPanel() {
+    if (!panel || !header) return;
+    const headerBottom = header.getBoundingClientRect().bottom;
+    panel.style.top = `${headerBottom}px`;
+    panel.style.maxHeight = `${window.innerHeight - headerBottom}px`;
+  }
+
+  function openSheet() {
+    if (!sheet) return;
+    previousFocus = document.activeElement as HTMLElement;
+    positionPanel();
+    sheet.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    closeButton?.focus();
+  }
+
+  function closeSheet() {
+    if (!sheet) return;
+    sheet.classList.add('hidden');
+    document.body.style.overflow = '';
+    previousFocus?.focus();
+  }
+
+  openButton?.addEventListener('click', openSheet);
+  closeButton?.addEventListener('click', closeSheet);
+  backdrop?.addEventListener('click', closeSheet);
+  window.addEventListener('resize', positionPanel);
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !sheet?.classList.contains('hidden')) closeSheet();
+  });
+</script>

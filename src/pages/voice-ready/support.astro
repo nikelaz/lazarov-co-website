@@ -1,0 +1,30 @@
+---
+import VoiceReadyLayout from '../../layouts/VoiceReadyLayout.astro';
+---
+<VoiceReadyLayout title="Support | Voice Ready" description="Get help with Voice Ready, send feedback, or report a bug.">
+  <section class="container grid gap-14 py-20 lg:grid-cols-[0.8fr_1.2fr] lg:py-28">
+    <div>
+      <p class="text-xs font-semibold uppercase tracking-[0.22em] text-accent">Support</p>
+      <h1 class="mt-5 text-5xl font-semibold tracking-[-0.04em] sm:text-7xl">How can we help?</h1>
+      <p class="mt-7 text-xl leading-9 text-muted">Ask a question, share an idea, or tell us when something does not work as expected.</p>
+      <div class="mt-10 border-t border-line pt-8 text-sm leading-7 text-muted">
+        <p class="font-semibold text-ink">Before reporting a bug</p>
+        <p class="mt-2">Include your operating system, Voice Ready version, input file format, the steps you took, and what happened. Please do not attach confidential recordings.</p>
+      </div>
+    </div>
+    <form name="voice-ready-support" method="POST" action="/voice-ready/support?status=success" data-netlify="true" netlify-honeypot="bot-field" class="rounded-2xl border border-line bg-white p-6 sm:p-8">
+      <input type="hidden" name="form-name" value="voice-ready-support" />
+      <p class="hidden"><label>Do not fill this out: <input name="bot-field" /></label></p>
+      <div class="grid gap-6">
+        <p id="support-success" hidden class="rounded-lg border border-accent/40 bg-white p-4 text-sm">Thank you. Your message has been sent.</p>
+        <label class="grid gap-2 text-sm font-medium">What can we help with?<select name="type" required class="rounded-lg border border-line bg-panel px-4 py-3 text-base outline-none focus:border-accent"><option value="Feedback">Feedback or feature idea</option><option value="Bug report">Report a bug</option><option value="Support question">Support question</option></select></label>
+        <div class="grid gap-6 sm:grid-cols-2"><label class="grid gap-2 text-sm font-medium">Name<input name="name" required autocomplete="name" class="rounded-lg border border-line bg-panel px-4 py-3 text-base outline-none focus:border-accent" /></label><label class="grid gap-2 text-sm font-medium">Email<input name="email" required type="email" autocomplete="email" class="rounded-lg border border-line bg-panel px-4 py-3 text-base outline-none focus:border-accent" /></label></div>
+        <label class="grid gap-2 text-sm font-medium">Operating system<select name="platform" class="rounded-lg border border-line bg-panel px-4 py-3 text-base outline-none focus:border-accent"><option>Windows</option><option>macOS</option><option>Linux</option><option>Other</option></select></label>
+        <label class="grid gap-2 text-sm font-medium">Message<textarea name="message" required rows="8" class="resize-y rounded-lg border border-line bg-panel px-4 py-3 text-base outline-none focus:border-accent"></textarea></label>
+        <p class="text-sm leading-6 text-muted">Do not include passwords, payment details, or private media. We use this information only to respond and improve Voice Ready.</p>
+        <button type="submit" class="w-fit rounded-full bg-ink px-7 py-3 text-sm font-semibold text-paper hover:bg-button-hover">Send message</button>
+      </div>
+    </form>
+  </section>
+  <script>if (new URLSearchParams(window.location.search).get('status') === 'success') document.getElementById('support-success')?.removeAttribute('hidden');</script>
+</VoiceReadyLayout>

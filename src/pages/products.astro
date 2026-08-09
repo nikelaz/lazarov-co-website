@@ -1,49 +1,47 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import SectionHeading from '../components/SectionHeading.astro';
 ---
 
-<BaseLayout title="Products — Lazarov & Co Ltd." description="Explore software products by Lazarov & Co Ltd., built with a focus on performance, reliability, native user experience, and long-term support.">
+<BaseLayout title="Products | Lazarov & Co Ltd." description="Explore Budget Warden and Voice Ready, focused software products built by Lazarov & Co Ltd.">
   <section class="container py-20">
     <p class="mb-6 text-xs font-semibold uppercase tracking-[0.24em] text-accent">Products</p>
-    <h1 class="font-serif text-4xl leading-tight text-ink sm:text-6xl">Products</h1>
-    <p class="mt-8 max-w-3xl text-xl leading-9 text-muted">We strive to craft software that solves focused problems with speed, reliability, and care. Each product has its own purpose, website, documentation, and support path.</p>
+    <h1 class="font-serif text-4xl leading-tight text-ink sm:text-6xl">Small Focused Tools</h1>
+    <p class="mt-8 max-w-none text-xl leading-9 text-muted">Focused applications designed to do a useful job well, with native performance and direct support.</p>
   </section>
 
-  <section class="border-y border-line bg-white">
-    <div class="container py-20">
-      <article class="grid gap-10 lg:grid-cols-[0.7fr_1.3fr]">
-        <div>
-          <p class="text-xs font-semibold uppercase tracking-[0.22em] text-accent">In native rewrite</p>
-          <h2 class="mt-5 font-serif text-5xl text-ink">Budget Warden</h2>
-        </div>
-        <div>
-          <p class="text-2xl leading-9 text-ink">A personal finance and budgeting application for tracking money with clarity and control.</p>
-          <div class="mt-6 space-y-6 leading-8 text-muted">
-            <p>Budget Warden helps users understand and manage their personal finances through structured budgeting and transaction tracking. The current public website remains available, but the product is being rewritten as a native-first local application so it can better match the company’s standards for performance, reliability, and maintainability.</p>
-            <p>The new version is being built around a C core with native applications for each platform. macOS and iOS are first, with Android and Windows planned to follow shortly. The rewritten app is intended to be commercial software sold as a one-time purchase.</p>
-            <p>The new source-available codebase is published on GitHub so customers and developers can study the implementation, audit the code, and follow the migration as it develops.</p>
-          </div>
-          <dl class="mt-10 grid gap-px border border-line bg-line sm:grid-cols-3">
-            <div class="bg-white p-5">
-              <dt class="text-xs uppercase tracking-[0.16em] text-muted">Platforms</dt>
-              <dd class="mt-2 text-ink">macOS and iOS first. Android and Windows to follow.</dd>
-            </div>
-            <div class="bg-white p-5">
-              <dt class="text-xs uppercase tracking-[0.16em] text-muted">Status</dt>
-              <dd class="mt-2 text-ink">Native rewrite in progress</dd>
-            </div>
-            <div class="bg-white p-5">
-              <dt class="text-xs uppercase tracking-[0.16em] text-muted">Commercial model</dt>
-              <dd class="mt-2 text-ink">One-time purchase</dd>
-            </div>
-          </dl>
-          <div class="mt-10 flex flex-wrap gap-4">
-            <a href="https://budgetwarden.com" class="bg-ink px-6 py-3 text-sm font-medium text-paper transition hover:bg-accent">Visit product website</a>
-            <a href="https://github.com/nikelaz/budget-warden-next" class="border border-line px-6 py-3 text-sm font-medium text-ink transition hover:border-ink">View source repo</a>
+  <section class="container grid gap-6 pb-24 lg:grid-cols-2">
+      <article class="border border-line bg-white p-8 sm:p-12">
+        <div class="flex items-center gap-4">
+          <img src="/images/budget-warden-icon.svg" alt="" class="h-14 w-14 rounded-2xl" width="56" height="56" />
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-[#355F8E]">Available now</p>
+            <h2 class="mt-1 font-serif text-4xl text-ink">Budget Warden</h2>
           </div>
         </div>
+        <p class="mt-8 text-xl leading-8 text-ink">A clear, private way to plan a budget and understand where your money goes.</p>
+        <p class="mt-5 leading-8 text-muted">Budget Warden is released for iPhone, iPad, Mac, and Android. Your financial data stays close at hand in an app built for clarity rather than complexity. Windows is coming soon.</p>
+        <div class="mt-8 flex flex-wrap gap-2 text-xs font-medium uppercase tracking-wider text-muted">
+          <span class="border border-line px-3 py-2">iPhone</span><span class="border border-line px-3 py-2">iPad</span><span class="border border-line px-3 py-2">macOS</span><span class="border border-line px-3 py-2">Android</span><span class="border border-dashed border-line px-3 py-2">Windows soon</span>
+        </div>
+        <a href="/products/budget-warden" class="mt-10 inline-flex items-center gap-3 bg-ink px-6 py-3 text-sm font-medium text-paper transition hover:bg-button-hover">Explore Budget Warden <span aria-hidden="true">→</span></a>
       </article>
-    </div>
+
+      <article class="border border-line bg-white p-8 sm:p-12">
+        <div class="flex items-center gap-4">
+          <span class="grid h-14 w-14 place-items-center rounded-2xl bg-[#171719] text-white">
+            <svg aria-hidden="true" viewBox="0 0 24 24" class="h-8 w-8 fill-none stroke-current"><path d="M4 12h2m2-4v8m3-11v14m3-11v8m3-6v4m3-3v2" stroke-width="1.6" stroke-linecap="round" /></svg>
+          </span>
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-muted">In development</p>
+            <h2 class="mt-1 font-serif text-4xl text-ink">Voice Ready</h2>
+          </div>
+        </div>
+        <p class="mt-8 text-xl leading-8 text-ink">Turn spoken audio into clean, balanced, publication-ready sound.</p>
+        <p class="mt-5 leading-8 text-muted">Voice Ready reduces background noise, balances speech, shapes tone, and targets the right final volume without making audio engineering your job. Coming to macOS, Windows, and Linux.</p>
+        <div class="mt-8 flex flex-wrap gap-2 text-xs font-medium uppercase tracking-wider text-muted">
+          <span class="border border-line px-3 py-2">macOS</span><span class="border border-line px-3 py-2">Windows</span><span class="border border-line px-3 py-2">Linux</span>
+        </div>
+        <a href="/voice-ready" class="mt-10 inline-flex items-center gap-3 border border-ink px-6 py-3 text-sm font-medium text-ink transition hover:bg-ink hover:text-paper">Discover Voice Ready <span aria-hidden="true">→</span></a>
+      </article>
   </section>
 </BaseLayout>

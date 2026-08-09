@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 ---
 
-<BaseLayout title="Lazarov & Co Ltd. — Native Software Built with Care" description="Lazarov & Co Ltd. builds fast, reliable native desktop and mobile software products with a focus on performance, stability, and long-term maintainability.">
+<BaseLayout title="Lazarov & Co Ltd. | Native Software Built with Care" description="Lazarov & Co Ltd. builds fast, reliable native desktop and mobile software products with a focus on performance, stability, and long-term maintainability.">
   <section class="container items-center gap-12 py-16 lg:py-20">
     <div>
       <p class="mb-6 text-xs font-semibold uppercase tracking-[0.24em] text-accent">Native software. Built with care.</p>
@@ -17,7 +17,7 @@ import SectionHeading from '../components/SectionHeading.astro';
         Performance is a core feature, not an afterthought.
       </p>
       <div class="mt-10 flex flex-wrap gap-4">
-        <a href="/products" class="bg-ink px-6 py-3 text-sm font-medium text-paper transition hover:bg-accent">View products</a>
+        <a href="/products" class="bg-ink px-6 py-3 text-sm font-medium text-paper transition hover:bg-button-hover">View products</a>
         <a href="/contact" class="border border-line px-6 py-3 text-sm font-medium text-ink transition hover:border-ink">Contact us</a>
       </div>
     </div>
@@ -59,10 +59,6 @@ import SectionHeading from '../components/SectionHeading.astro';
           <p class="mt-5 leading-8 text-muted">Dependencies affect security, build times, binary size, maintainability, licensing, and long-term risk. We use them when they provide real value.</p>
         </article>
         <article class="border-t border-line pt-6">
-          <h2 class="font-serif text-3xl text-ink">Prefer durable technology</h2>
-          <p class="mt-5 leading-8 text-muted">C, Rust, and native platform frameworks are often good choices for software that needs to be fast, reliable, and maintainable over time.</p>
-        </article>
-        <article class="border-t border-line pt-6">
           <h2 class="font-serif text-3xl text-ink">Support the products we ship</h2>
           <p class="mt-5 leading-8 text-muted">We provide support, updates, and accountability for the software we publish.</p>
         </article>
@@ -70,28 +66,4 @@ import SectionHeading from '../components/SectionHeading.astro';
     </div>
   </section>
 
-  <section class="bg-panel">
-    <div class="container grid gap-12 py-24 lg:grid-cols-[0.85fr_1.15fr]">
-      <SectionHeading eyebrow="Commercial and source-available" title="Fair pricing, visible code." />
-      <div class="space-y-7 text-lg leading-9 text-muted">
-        <p>Our products are commercial software and we try to provide fair, straightforward pricing. The goal is to favor one-time purchases where practical, giving customers useful software without turning every small tool into a recurring subscription, because we believe that's not ethical.</p>
-        <p>Where possible, product source code is made available on GitHub anyone can review and study the real application code, understand engineering tradeoffs. The software remains commercially licensed, but the code can still serve a wider educational purpose and allow our customers to audit the code.</p>
-        <p>We believe good software can support a sustainable business and help people learn at the same time. That balance is part of how we want to build.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="container py-28">
-    <div class="max-w-4xl">
-      <div>
-        <p class="mb-5 text-xs font-semibold uppercase tracking-[0.22em] text-accent">Products</p>
-        <h2 class="font-serif text-5xl leading-tight text-ink">Practical software, owned and supported directly.</h2>
-        <p class="mt-7 text-lg leading-9 text-muted">Budget Warden is being rewritten as our first native-first local application, starting with macOS and iOS. The new version is built around a C core, native apps for each platform, source-available code, and a one-time purchase model.</p>
-        <div class="mt-10 flex flex-wrap gap-4">
-          <a href="/products" class="bg-ink px-6 py-3 text-sm font-medium text-paper transition hover:bg-accent">View products</a>
-          <a href="/contact" class="border border-line px-6 py-3 text-sm font-medium text-ink transition hover:border-ink">Ask a question</a>
-        </div>
-      </div>
-    </div>
-  </section>
 </BaseLayout>

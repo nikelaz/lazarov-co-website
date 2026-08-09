@@ -1,0 +1,42 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles.css';
+interface Props { title: string; description: string; }
+const { title, description } = Astro.props;
+const path = Astro.url.pathname.replace(/\/$/, '') || '/voice-ready';
+const links = [
+  { href: '/voice-ready', label: 'Overview' },
+  { href: '/voice-ready/support', label: 'Support' },
+];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={new URL(Astro.url.pathname, 'https://lazarovco.com')} />
+    <title>{title}</title>
+    <script data-goatcounter="https://lazarovco.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  </head>
+  <body class="voice-site min-h-screen bg-paper font-sans text-ink antialiased">
+    <Header compact />
+    <header class="sticky top-0 z-40 border-b border-line bg-paper/90 backdrop-blur-xl">
+      <div class="container flex flex-wrap items-center justify-between gap-5 py-4">
+        <a href="/voice-ready" class="flex items-center gap-3" aria-label="Voice Ready home">
+          <span class="grid h-10 w-10 place-items-center rounded-xl bg-[#171719] text-white">
+            <svg aria-hidden="true" viewBox="0 0 24 24" class="h-6 w-6 fill-none stroke-current"><path d="M4 12h2m2-4v8m3-11v14m3-11v8m3-6v4m3-3v2" stroke-width="1.6" stroke-linecap="round" /></svg>
+          </span>
+          <span class="text-lg font-semibold">Voice Ready</span>
+        </a>
+        <nav class="order-3 flex w-full items-center gap-5 overflow-x-auto text-sm text-muted md:order-2 md:w-auto md:gap-7" aria-label="Voice Ready navigation">
+          {links.map((link) => <a class:list={['whitespace-nowrap transition hover:text-accent', path === link.href && 'text-ink']} href={link.href}>{link.label}</a>)}
+        </nav>
+        <span aria-disabled="true" class="order-2 cursor-not-allowed rounded-full bg-panel px-5 py-2.5 text-sm font-semibold text-muted md:order-3">Coming Soon</span>
+      </div>
+    </header>
+    <main><slot /></main>
+    <Footer />
+  </body>
+</html>

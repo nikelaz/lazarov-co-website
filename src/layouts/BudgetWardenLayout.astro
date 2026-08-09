@@ -1,0 +1,33 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles.css';
+
+interface Props { title: string; description: string; }
+const { title, description } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={new URL(Astro.url.pathname, 'https://lazarovco.com')} />
+    <title>{title}</title>
+    <script data-goatcounter="https://lazarovco.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  </head>
+  <body class="min-h-screen bg-[#F6F8FF] font-sans text-ink antialiased">
+    <Header compact />
+    <header class="border-b border-line bg-paper/90 backdrop-blur-xl">
+      <div class="container flex flex-wrap items-center justify-between gap-5 py-4">
+        <a href="https://www.budgetwarden.com/" class="flex items-center gap-3" aria-label="Budget Warden website">
+          <img src="/images/budget-warden-icon.svg" alt="" class="h-10 w-10 rounded-xl" width="40" height="40" />
+          <span class="text-lg font-semibold tracking-tight">Budget Warden</span>
+        </a>
+        <a href="https://www.budgetwarden.com/download/" target="_blank" rel="noreferrer" class="rounded-full bg-ink px-5 py-2.5 text-sm font-medium text-paper transition hover:bg-button-hover">Download</a>
+      </div>
+    </header>
+    <main><slot /></main>
+    <Footer />
+  </body>
+</html>
