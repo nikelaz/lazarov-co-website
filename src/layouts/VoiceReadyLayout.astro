@@ -5,6 +5,8 @@ import '../styles.css';
 interface Props { title: string; description: string; }
 const { title, description } = Astro.props;
 const path = Astro.url.pathname.replace(/\/$/, '') || '/voice-ready';
+const canonicalUrl = new URL(Astro.url.pathname, 'https://lazarovco.com');
+const socialImageUrl = new URL('/images/social/voice-ready.png', 'https://lazarovco.com');
 const links = [
   { href: '/voice-ready', label: 'Overview' },
   { href: '/voice-ready/support', label: 'Support' },
@@ -16,7 +18,22 @@ const links = [
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
-    <link rel="canonical" href={new URL(Astro.url.pathname, 'https://lazarovco.com')} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Lazarov & Co" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={socialImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Voice Ready product overview" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImageUrl} />
     <title>{title}</title>
     <script data-goatcounter="https://lazarovco.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   </head>

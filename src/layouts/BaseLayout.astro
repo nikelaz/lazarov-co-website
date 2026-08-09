@@ -6,9 +6,16 @@ import '../styles.css';
 interface Props {
   title: string;
   description?: string;
+  socialImage?: string;
 }
 
-const { title, description = 'We strive to build fast, reliable software with careful engineering and long-term maintainability.' } = Astro.props;
+const {
+  title,
+  description = 'We strive to build fast, reliable software with careful engineering and long-term maintainability.',
+  socialImage = '/images/social/lazarovco.png',
+} = Astro.props;
+const canonicalUrl = new URL(Astro.url.pathname, 'https://lazarovco.com');
+const socialImageUrl = new URL(socialImage, 'https://lazarovco.com');
 ---
 
 <!doctype html>
@@ -17,7 +24,22 @@ const { title, description = 'We strive to build fast, reliable software with ca
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
-    <link rel="canonical" href={new URL(Astro.url.pathname, 'https://lazarovco.com')} />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Lazarov & Co" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={socialImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={title} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImageUrl} />
     <title>{title}</title>
     <script data-goatcounter="https://lazarovco.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
   </head>
