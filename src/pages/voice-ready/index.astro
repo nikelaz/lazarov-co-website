@@ -1,13 +1,24 @@
 ---
 import VoiceReadyLayout from '../../layouts/VoiceReadyLayout.astro';
-import VoiceReadyLaunch from '../../components/VoiceReadyLaunch.astro';
 const storeUrl = 'https://apps.microsoft.com/detail/9P1LF881W64N?hl=en-us&gl=US&ocid=pdpshare';
+const fireworkRays = Array.from({ length: 12 }, (_, index) => index * 30);
 ---
 <VoiceReadyLayout title="Voice Ready | Clear voice. Less work." description="Voice Ready cleans, balances, and prepares spoken audio for publishing on macOS, Windows, and Linux.">
-  <VoiceReadyLaunch />
-
   <section class="relative overflow-hidden border-b border-line">
     <div class="pointer-events-none absolute inset-x-0 top-0 mx-auto h-[40rem] max-w-5xl bg-[radial-gradient(circle,rgba(31,78,121,.10),transparent_60%)]"></div>
+    <div class="hero-fireworks pointer-events-none absolute inset-x-0 top-0 h-[32rem] overflow-hidden" aria-hidden="true">
+      {[
+        ['12%', '25%', '#1769aa', '0s', '1'],
+        ['86%', '19%', '#d54336', '1.3s', '.82'],
+        ['75%', '57%', '#e39b18', '2.7s', '.62'],
+        ['23%', '65%', '#8056b3', '3.8s', '.55'],
+      ].map(([left, top, color, delay, scale]) => (
+        <span class="hero-firework" style={`--firework-left:${left};--firework-top:${top};--firework-color:${color};--firework-delay:${delay};--firework-scale:${scale}`}>
+          {fireworkRays.map((angle) => <i style={`--ray-angle:${angle}deg`}></i>)}
+          <b></b>
+        </span>
+      ))}
+    </div>
     <div class="container relative pt-20 text-center sm:pt-28">
       <p class="text-xs font-semibold uppercase tracking-[0.24em] text-accent">Voice finishing, simplified</p>
       <h1 class="mx-auto mt-6 max-w-5xl text-5xl font-semibold leading-[.98] tracking-[-0.05em] sm:text-7xl lg:text-8xl">Clear voice.<br />Less work.</h1>
@@ -21,6 +32,61 @@ const storeUrl = 'https://apps.microsoft.com/detail/9P1LF881W64N?hl=en-us&gl=US&
       </div>
     </div>
   </section>
+
+  <style>
+    .hero-firework {
+      position: absolute;
+      top: var(--firework-top);
+      left: var(--firework-left);
+      width: 7rem;
+      height: 7rem;
+      color: var(--firework-color);
+      transform: translate(-50%, -50%) scale(var(--firework-scale));
+    }
+
+    .hero-firework i,
+    .hero-firework b {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      display: block;
+    }
+
+    .hero-firework i {
+      width: 3px;
+      height: 24px;
+      border-radius: 999px;
+      background: currentColor;
+      box-shadow: 0 0 8px color-mix(in srgb, currentColor 70%, transparent);
+      opacity: 0;
+      transform-origin: 50% 0;
+      animation: firework-ray 5s var(--firework-delay) ease-out infinite;
+    }
+
+    .hero-firework b {
+      width: 8px;
+      height: 8px;
+      border: 2px solid currentColor;
+      border-radius: 999px;
+      opacity: 0;
+      transform: translate(-50%, -50%);
+      animation: firework-core 5s var(--firework-delay) ease-out infinite;
+    }
+
+    @keyframes firework-ray {
+      0%, 12% { opacity: 0; transform: rotate(var(--ray-angle)) translateY(0) scaleY(.2); }
+      15% { opacity: 1; }
+      30% { opacity: .9; transform: rotate(var(--ray-angle)) translateY(-40px) scaleY(1); }
+      43%, 100% { opacity: 0; transform: rotate(var(--ray-angle)) translateY(-58px) scaleY(.25); }
+    }
+
+    @keyframes firework-core {
+      0%, 12% { opacity: 0; transform: translate(-50%, -50%) scale(.1); }
+      15% { opacity: 1; }
+      34% { opacity: 0; transform: translate(-50%, -50%) scale(3.8); }
+      100% { opacity: 0; }
+    }
+  </style>
 
   <section class="container py-24 sm:py-32">
     <div class="grid gap-16 lg:grid-cols-[0.75fr_1.25fr]">
