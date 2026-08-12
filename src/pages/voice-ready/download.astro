@@ -1,11 +1,12 @@
 ---
 import VoiceReadyLayout from '../../layouts/VoiceReadyLayout.astro';
+const storeUrl = 'https://apps.microsoft.com/detail/9P1LF881W64N?hl=en-us&gl=US&ocid=pdpshare';
 ---
-<VoiceReadyLayout title="Download | Voice Ready" description="Voice Ready is coming soon to macOS, Windows, and Linux.">
+<VoiceReadyLayout title="Download Voice Ready for Windows" description="Download Voice Ready for Windows from the Microsoft Store. macOS and Linux are coming soon.">
   <section class="container py-20 text-center sm:py-28">
-    <p class="text-xs font-semibold uppercase tracking-[0.22em] text-accent">Coming soon</p>
+    <p class="text-xs font-semibold uppercase tracking-[0.22em] text-accent">Available now for Windows</p>
     <h1 class="mx-auto mt-5 max-w-4xl text-5xl font-semibold tracking-[-0.045em] sm:text-7xl">Your voice, ready on your desktop.</h1>
-    <p class="mx-auto mt-7 max-w-2xl text-xl leading-9 text-muted">Voice Ready will launch for macOS, Windows, and Linux. Store and direct downloads are not open yet.</p>
+    <p class="mx-auto mt-7 max-w-2xl text-xl leading-9 text-muted">Download Voice Ready from the Microsoft Store. macOS and Linux are coming soon.</p>
 
     <div class="mx-auto mt-14 grid max-w-5xl gap-10 text-left md:grid-cols-2">
       <div>
@@ -14,8 +15,8 @@ import VoiceReadyLayout from '../../layouts/VoiceReadyLayout.astro';
             <path d="M3 5.6 10.4 4.6v7H3V5.6Zm8.5-1.2L21 3v8.6h-9.5V4.4ZM3 12.7h7.4v7L3 18.7v-6Zm8.5 0H21V21l-9.5-1.3v-7Z" />
           </svg>
           <h2 class="mt-6 text-3xl font-semibold">Windows</h2>
-          <p class="mt-2 text-muted">Will be available from the Microsoft Store.</p>
-          <button type="button" disabled class="mt-8 w-full cursor-not-allowed rounded-full bg-panel px-6 py-3 text-sm font-semibold text-muted">Coming soon</button>
+          <p class="mt-2 text-muted">Available from the Microsoft Store.</p>
+          <a href={storeUrl} target="_blank" rel="noopener noreferrer" class="mt-8 block w-full rounded-full bg-ink px-6 py-3 text-center text-sm font-semibold text-paper transition hover:bg-button-hover">Download for Windows <span aria-hidden="true">↗</span></a>
         </article>
         <section class="mt-5 border-t border-line pt-6" aria-labelledby="windows-requirements">
           <h3 id="windows-requirements" class="text-lg font-semibold">System requirements</h3>

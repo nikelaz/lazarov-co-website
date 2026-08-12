@@ -1,0 +1,62 @@
+---
+const storeUrl = 'https://apps.microsoft.com/detail/9P1LF881W64N?hl=en-us&gl=US&ocid=pdpshare';
+const confetti = [
+  ['7%', '-.3s', '7px', '#1f4e79'], ['13%', '-2.1s', '5px', '#d49a34'],
+  ['19%', '-1.2s', '8px', '#b84f44'], ['25%', '-3.4s', '6px', '#56845f'],
+  ['31%', '-.8s', '5px', '#725a9a'], ['38%', '-2.7s', '8px', '#d49a34'],
+  ['44%', '-1.7s', '6px', '#1f4e79'], ['51%', '-3.8s', '5px', '#b84f44'],
+  ['57%', '-.5s', '8px', '#56845f'], ['63%', '-2.4s', '6px', '#725a9a'],
+  ['70%', '-1.4s', '5px', '#d49a34'], ['76%', '-3.1s', '8px', '#1f4e79'],
+  ['82%', '-1s', '6px', '#b84f44'], ['88%', '-2.9s', '5px', '#56845f'],
+  ['94%', '-1.9s', '7px', '#725a9a'],
+];
+---
+
+<section class="launch-announcement relative isolate overflow-hidden border-y border-line bg-white" aria-labelledby="voice-ready-launch-title">
+  <div class="launch-confetti pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+    {confetti.map(([left, delay, size, color], index) => (
+      <i style={`--confetti-left:${left};--confetti-delay:${delay};--confetti-size:${size};--confetti-color:${color};--confetti-drift:${index % 2 ? '32px' : '-28px'};--confetti-turn:${index % 3 ? '540deg' : '-480deg'}`}></i>
+    ))}
+  </div>
+
+  <div class="container relative z-10 grid gap-8 py-12 sm:py-14 lg:grid-cols-[1fr_auto] lg:items-center">
+    <div class="max-w-3xl">
+      <p class="text-xs font-semibold uppercase tracking-[0.24em] text-accent">Just released</p>
+      <h2 id="voice-ready-launch-title" class="mt-3 font-serif text-3xl leading-tight text-ink sm:text-4xl">Voice Ready is now available for Windows.</h2>
+      <p class="mt-4 text-lg leading-8 text-muted">Clean, balance, and prepare spoken audio in one focused desktop app. macOS and Linux are coming soon.</p>
+    </div>
+    <a href={storeUrl} target="_blank" rel="noopener noreferrer" class="inline-flex w-fit items-center gap-3 bg-ink px-6 py-3.5 text-sm font-medium text-paper transition hover:bg-button-hover">
+      Download from Microsoft Store
+      <span aria-hidden="true">↗</span>
+    </a>
+  </div>
+</section>
+
+<style>
+  .launch-announcement {
+    background-image: radial-gradient(circle at 86% 50%, rgba(31, 78, 121, 0.09), transparent 30%);
+  }
+
+  .launch-confetti i {
+    position: absolute;
+    top: -1rem;
+    left: var(--confetti-left);
+    width: var(--confetti-size);
+    height: calc(var(--confetti-size) * 1.8);
+    border-radius: 1px;
+    background: var(--confetti-color);
+    opacity: 0;
+    animation: launch-confetti-fall 4.2s var(--confetti-delay) linear infinite;
+  }
+
+  @keyframes launch-confetti-fall {
+    0% { opacity: 0; transform: translate3d(0, -1rem, 0) rotate(0); }
+    8% { opacity: 0.85; }
+    88% { opacity: 0.7; }
+    100% { opacity: 0; transform: translate3d(var(--confetti-drift), 15rem, 0) rotate(var(--confetti-turn)); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .launch-confetti i { animation: none; opacity: 0.45; top: calc((var(--confetti-size) + 1px) * 4); transform: rotate(24deg); }
+  }
+</style>

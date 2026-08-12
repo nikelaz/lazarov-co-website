@@ -7,8 +7,10 @@ const { title, description } = Astro.props;
 const path = Astro.url.pathname.replace(/\/$/, '') || '/voice-ready';
 const canonicalUrl = new URL(Astro.url.pathname, 'https://lazarovco.com');
 const socialImageUrl = new URL('/images/social/voice-ready.png', 'https://lazarovco.com');
+const storeUrl = 'https://apps.microsoft.com/detail/9P1LF881W64N?hl=en-us&gl=US&ocid=pdpshare';
 const links = [
   { href: '/voice-ready', label: 'Overview' },
+  { href: '/voice-ready/download', label: 'Download' },
   { href: '/voice-ready/support', label: 'Support' },
 ];
 ---
@@ -50,7 +52,7 @@ const links = [
         <nav class="order-3 flex w-full items-center gap-5 overflow-x-auto text-sm text-muted md:order-2 md:w-auto md:gap-7" aria-label="Voice Ready navigation">
           {links.map((link) => <a class:list={['whitespace-nowrap transition hover:text-accent', path === link.href && 'text-ink']} href={link.href}>{link.label}</a>)}
         </nav>
-        <span aria-disabled="true" class="order-2 cursor-not-allowed rounded-full bg-panel px-5 py-2.5 text-sm font-semibold text-muted md:order-3">Coming Soon</span>
+        <a href={storeUrl} target="_blank" rel="noopener noreferrer" class="order-2 rounded-full bg-ink px-5 py-2.5 text-sm font-semibold text-paper transition hover:bg-button-hover md:order-3">Get for Windows</a>
       </div>
     </header>
     <main><slot /></main>
