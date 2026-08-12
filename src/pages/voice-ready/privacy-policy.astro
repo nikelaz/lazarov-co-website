@@ -1,0 +1,50 @@
+---
+import VoiceReadyLayout from '../../layouts/VoiceReadyLayout.astro';
+---
+
+<VoiceReadyLayout title="Privacy Policy | Voice Ready" description="Learn how Voice Ready handles information.">
+  <section class="container container-narrow py-20 lg:py-28">
+    <p class="text-xs font-semibold uppercase tracking-[0.22em] text-accent">Voice Ready</p>
+    <h1 class="mt-5 text-5xl font-semibold tracking-[-0.04em] sm:text-7xl">Privacy Policy</h1>
+    <p class="mt-6 text-sm text-muted"><strong>Effective date:</strong> August 12, 2026</p>
+
+    <div class="prose-page mt-12">
+      <p>Voice Ready is a desktop audio editor published by Lazarov &amp; Co Ltd. This policy explains how the Voice Ready application handles information.</p>
+
+      <h2>Summary</h2>
+      <p>Voice Ready processes audio and video locally on your device. The application does not require an account, does not include advertising or analytics, and does not send your media or editing activity to Lazarov &amp; Co Ltd. or to an AI service.</p>
+
+      <h2>Information handled by the application</h2>
+      <p>When you choose a file, Voice Ready accesses:</p>
+      <ul>
+        <li>the audio or video file you selected;</li>
+        <li>its file name and local path;</li>
+        <li>the editing options you select; and</li>
+        <li>the destination you choose for the processed file.</li>
+      </ul>
+      <p>This information is used only to provide the application's editing, preview, and export features. Media processing, including neural noise suppression, takes place on your device using the model bundled with the application. Voice Ready does not record from your microphone.</p>
+
+      <h2>Local files and retention</h2>
+      <p>Voice Ready reads the source file without overwriting it. It creates the processed output at the location you select.</p>
+      <p>During export, the application creates a temporary file in the output directory. On successful completion, that file becomes the selected output. If processing fails or is cancelled, the application attempts to delete the temporary file. An interrupted process or operating-system error may leave a temporary file behind, which you may delete manually.</p>
+      <p>Selected file paths, editing options, waveform data, and preview buffers are kept in application memory for the current session and are not used to build a history or profile. On macOS, the operating system's Core ML integration may store compiled copies of the bundled denoising model in the application's cache directory to improve performance. This cache does not contain your audio or video content and may be removed using normal operating-system storage-management tools.</p>
+
+      <h2>Network access and data sharing</h2>
+      <p>Voice Ready does not upload files, make cloud-processing requests, or transmit telemetry, analytics, crash reports, advertising identifiers, or other usage data. Lazarov &amp; Co Ltd. therefore does not sell, rent, or share personal information collected through the application.</p>
+      <p>The application's Support button opens the Voice Ready support website in your default web browser. Visiting that website leaves the application and may provide information such as your IP address and browser details to the website or its service providers under the website's own privacy practices. Voice Ready does not receive that browsing information from your browser.</p>
+      <p>If you obtained Voice Ready through an app store, the store operator may separately process purchase, download, device, diagnostic, or account information under its own privacy policy. That processing is controlled by the store operator, not by Voice Ready.</p>
+
+      <h2>Security</h2>
+      <p>Because Voice Ready works with local files, their security depends in part on your device, operating-system account, storage location, and backups. Keep your device and operating system secure, and avoid saving sensitive output to a location accessible to people you do not trust.</p>
+
+      <h2>Children's privacy</h2>
+      <p>Voice Ready is a general-purpose editing tool and is not directed to children. The application does not knowingly collect personal information from children or other users.</p>
+
+      <h2>Changes to this policy</h2>
+      <p>This policy may be updated if Voice Ready's data-handling practices change. A revised policy will state a new effective date and will be distributed with the application or made available through the Voice Ready website.</p>
+
+      <h2>Contact</h2>
+      <p>For privacy questions or requests, contact Lazarov &amp; Co Ltd. through the <a href="/voice-ready/support">Voice Ready support page</a>.</p>
+    </div>
+  </section>
+</VoiceReadyLayout>
