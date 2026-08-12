@@ -1,14 +1,16 @@
 ---
 const storeUrl = 'https://apps.microsoft.com/detail/9P1LF881W64N?hl=en-us&gl=US&ocid=pdpshare';
 const confetti = [
-  ['7%', '-.3s', '7px', '#1f4e79'], ['13%', '-2.1s', '5px', '#d49a34'],
-  ['19%', '-1.2s', '8px', '#b84f44'], ['25%', '-3.4s', '6px', '#56845f'],
-  ['31%', '-.8s', '5px', '#725a9a'], ['38%', '-2.7s', '8px', '#d49a34'],
-  ['44%', '-1.7s', '6px', '#1f4e79'], ['51%', '-3.8s', '5px', '#b84f44'],
-  ['57%', '-.5s', '8px', '#56845f'], ['63%', '-2.4s', '6px', '#725a9a'],
-  ['70%', '-1.4s', '5px', '#d49a34'], ['76%', '-3.1s', '8px', '#1f4e79'],
-  ['82%', '-1s', '6px', '#b84f44'], ['88%', '-2.9s', '5px', '#56845f'],
-  ['94%', '-1.9s', '7px', '#725a9a'],
+  ['3%', '-.3s', '9px', '#1769aa'], ['7%', '-2.1s', '7px', '#e39b18'],
+  ['12%', '-1.2s', '10px', '#d54336'], ['17%', '-3.4s', '8px', '#398c50'],
+  ['22%', '-.8s', '7px', '#8056b3'], ['27%', '-2.7s', '10px', '#e39b18'],
+  ['32%', '-1.7s', '8px', '#1769aa'], ['37%', '-3.8s', '7px', '#d54336'],
+  ['42%', '-.5s', '10px', '#398c50'], ['47%', '-2.4s', '8px', '#8056b3'],
+  ['52%', '-1.4s', '7px', '#e39b18'], ['57%', '-3.1s', '10px', '#1769aa'],
+  ['62%', '-1s', '8px', '#d54336'], ['67%', '-2.9s', '7px', '#398c50'],
+  ['72%', '-1.9s', '9px', '#8056b3'], ['77%', '-3.6s', '8px', '#e39b18'],
+  ['82%', '-.7s', '10px', '#1769aa'], ['87%', '-2.5s', '7px', '#d54336'],
+  ['92%', '-1.5s', '9px', '#398c50'], ['97%', '-3.2s', '8px', '#8056b3'],
 ];
 ---
 
@@ -45,18 +47,16 @@ const confetti = [
     height: calc(var(--confetti-size) * 1.8);
     border-radius: 1px;
     background: var(--confetti-color);
+    z-index: 0;
     opacity: 0;
-    animation: launch-confetti-fall 4.2s var(--confetti-delay) linear infinite;
+    box-shadow: 0 0 0 0.5px rgb(25 24 23 / 12%);
+    animation: launch-confetti-fall 3.6s var(--confetti-delay) linear infinite;
   }
 
   @keyframes launch-confetti-fall {
     0% { opacity: 0; transform: translate3d(0, -1rem, 0) rotate(0); }
-    8% { opacity: 0.85; }
-    88% { opacity: 0.7; }
-    100% { opacity: 0; transform: translate3d(var(--confetti-drift), 15rem, 0) rotate(var(--confetti-turn)); }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .launch-confetti i { animation: none; opacity: 0.45; top: calc((var(--confetti-size) + 1px) * 4); transform: rotate(24deg); }
+    5% { opacity: 1; }
+    92% { opacity: 0.95; }
+    100% { opacity: 0; transform: translate3d(var(--confetti-drift), 22rem, 0) rotate(var(--confetti-turn)); }
   }
 </style>

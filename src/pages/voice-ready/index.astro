@@ -1,8 +1,11 @@
 ---
 import VoiceReadyLayout from '../../layouts/VoiceReadyLayout.astro';
+import VoiceReadyLaunch from '../../components/VoiceReadyLaunch.astro';
 const storeUrl = 'https://apps.microsoft.com/detail/9P1LF881W64N?hl=en-us&gl=US&ocid=pdpshare';
 ---
 <VoiceReadyLayout title="Voice Ready | Clear voice. Less work." description="Voice Ready cleans, balances, and prepares spoken audio for publishing on macOS, Windows, and Linux.">
+  <VoiceReadyLaunch />
+
   <section class="relative overflow-hidden border-b border-line">
     <div class="pointer-events-none absolute inset-x-0 top-0 mx-auto h-[40rem] max-w-5xl bg-[radial-gradient(circle,rgba(31,78,121,.10),transparent_60%)]"></div>
     <div class="container relative pt-20 text-center sm:pt-28">
