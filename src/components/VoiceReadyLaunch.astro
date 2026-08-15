@@ -1,5 +1,5 @@
 ---
-const storeUrl = 'https://apps.microsoft.com/detail/9P1LF881W64N?hl=en-us&gl=US&ocid=pdpshare';
+import { voiceReadyDemoStoreUrl } from '../voice-ready';
 const confetti = [
   ['3%', '-.3s', '9px', '#1769aa'], ['7%', '-2.1s', '7px', '#e39b18'],
   ['12%', '-1.2s', '10px', '#d54336'], ['17%', '-3.4s', '8px', '#398c50'],
@@ -27,8 +27,8 @@ const confetti = [
       <h2 id="voice-ready-launch-title" class="mt-3 font-serif text-3xl leading-tight text-ink sm:text-4xl">Voice Ready is now available for Windows.</h2>
       <p class="mt-4 text-lg leading-8 text-muted">Clean, balance, and prepare spoken audio in one focused desktop app. macOS and Linux are coming soon.</p>
     </div>
-    <a href={storeUrl} target="_blank" rel="noopener noreferrer" class="inline-flex w-fit items-center gap-3 bg-ink px-6 py-3.5 text-sm font-medium text-paper transition hover:bg-button-hover">
-      Download from Microsoft Store
+    <a href={voiceReadyDemoStoreUrl} target="_blank" rel="noopener noreferrer" data-goatcounter-click="voice-ready-demo-company-home" class="inline-flex w-fit items-center gap-3 bg-ink px-6 py-3.5 text-sm font-medium text-paper transition hover:bg-button-hover">
+      Try the Free Demo
       <span aria-hidden="true">↗</span>
     </a>
   </div>
