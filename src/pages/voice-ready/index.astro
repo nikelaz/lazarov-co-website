@@ -1,8 +1,8 @@
 ---
 import VoiceReadyLayout from '../../layouts/VoiceReadyLayout.astro';
-import { voiceReadyDemoStoreUrl, voiceReadyStoreUrl } from '../../voice-ready';
+import { voiceReadyStoreUrl } from '../../voice-ready';
 ---
-<VoiceReadyLayout title="Voice Ready | Clear voice. Less work." description="Voice Ready cleans, balances, and prepares spoken audio for publishing on Windows. Try every feature free with exports limited to 3 minutes.">
+<VoiceReadyLayout title="Voice Ready | Clear voice. Less work." description="Voice Ready cleans, balances, and prepares spoken audio for publishing. Try every feature free on Windows or macOS with exports limited to 3 minutes.">
   <section class="relative overflow-hidden border-b border-line">
     <div class="pointer-events-none absolute inset-x-0 top-0 mx-auto h-[40rem] max-w-5xl bg-[radial-gradient(circle,rgba(31,78,121,.10),transparent_60%)]"></div>
     <div class="container relative pt-20 text-center sm:pt-28">
@@ -10,10 +10,10 @@ import { voiceReadyDemoStoreUrl, voiceReadyStoreUrl } from '../../voice-ready';
       <h1 class="mx-auto mt-6 max-w-5xl text-5xl font-semibold leading-[.98] tracking-[-0.05em] sm:text-7xl lg:text-8xl">Clear voice.<br />Less work.</h1>
       <p class="mx-auto mt-8 max-w-2xl text-xl leading-9 text-muted">Drop in audio or video. Reduce background noise, even out speech, shape the tone, and deliver the right loudness, all in one focused app.</p>
       <div class="mt-10 flex flex-wrap justify-center gap-4">
-        <a href={voiceReadyDemoStoreUrl} target="_blank" rel="noopener noreferrer" data-goatcounter-click="voice-ready-demo-overview-hero" class="rounded-full bg-ink px-7 py-3.5 text-sm font-semibold text-paper transition hover:bg-button-hover">Try the Free Demo <span aria-hidden="true">↗</span></a>
-        <a href={voiceReadyStoreUrl} target="_blank" rel="noopener noreferrer" data-goatcounter-click="voice-ready-full-overview-hero" class="rounded-full border border-ink px-7 py-3.5 text-sm font-semibold text-ink transition hover:bg-ink hover:text-paper">Buy the Full App <span aria-hidden="true">↗</span></a>
+        <a href="/voice-ready/download" data-goatcounter-click="voice-ready-demo-overview-hero" class="rounded-full bg-ink px-7 py-3.5 text-sm font-semibold text-paper transition hover:bg-button-hover">Try the Free Demo <span aria-hidden="true">→</span></a>
+        <a href={voiceReadyStoreUrl} target="_blank" rel="noopener noreferrer" data-goatcounter-click="voice-ready-full-overview-hero" class="rounded-full border border-ink px-7 py-3.5 text-sm font-semibold text-ink transition hover:bg-ink hover:text-paper">Buy for Windows <span aria-hidden="true">↗</span></a>
       </div>
-      <p class="mt-5 text-sm text-muted">All features are included; demo exports are limited to 3 minutes per file. Available now for Windows. macOS and Linux are coming soon.</p>
+      <p class="mt-5 text-sm text-muted">All features are included; demo exports are limited to 3 minutes per file. Try it now on Windows or macOS. The full Mac app and Linux version are coming soon.</p>
       <div class="mt-16 overflow-hidden rounded-t-2xl border border-b-0 border-line bg-white p-2 shadow-[0_-10px_80px_rgba(31,78,121,.08)] sm:p-3">
         <img src="/images/voice-ready-ui.webp" alt="Voice Ready interface showing noise reduction, voice balance, tone, volume, and audio preview controls" class="w-full rounded-xl" width="1372" height="1062" />
       </div>
@@ -67,8 +67,8 @@ import { voiceReadyDemoStoreUrl, voiceReadyStoreUrl } from '../../voice-ready';
       <h2 class="mx-auto max-w-3xl text-4xl font-semibold tracking-[-0.04em] sm:text-6xl">Spend less time fixing audio.</h2>
       <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-muted">Try every feature free. Demo exports are limited to 3 minutes per file.</p>
       <div class="mt-9 flex flex-wrap justify-center gap-4">
-        <a href={voiceReadyDemoStoreUrl} target="_blank" rel="noopener noreferrer" data-goatcounter-click="voice-ready-demo-overview-footer" class="rounded-full bg-ink px-8 py-4 text-sm font-semibold text-paper transition hover:bg-button-hover">Try the Free Demo <span aria-hidden="true">↗</span></a>
-        <a href={voiceReadyStoreUrl} target="_blank" rel="noopener noreferrer" data-goatcounter-click="voice-ready-full-overview-footer" class="rounded-full border border-ink px-8 py-4 text-sm font-semibold text-ink transition hover:bg-ink hover:text-paper">Buy the Full App <span aria-hidden="true">↗</span></a>
+        <a href="/voice-ready/download" data-goatcounter-click="voice-ready-demo-overview-footer" class="rounded-full bg-ink px-8 py-4 text-sm font-semibold text-paper transition hover:bg-button-hover">Try the Free Demo <span aria-hidden="true">→</span></a>
+        <a href={voiceReadyStoreUrl} target="_blank" rel="noopener noreferrer" data-goatcounter-click="voice-ready-full-overview-footer" class="rounded-full border border-ink px-8 py-4 text-sm font-semibold text-ink transition hover:bg-ink hover:text-paper">Buy for Windows <span aria-hidden="true">↗</span></a>
       </div>
     </div>
   </section>
