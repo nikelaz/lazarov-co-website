@@ -1,0 +1,149 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const releaseUrl = 'https://github.com/nikelaz/esvg-gui/releases/tag/v0.1.2';
+const downloadBase = 'https://github.com/nikelaz/esvg-gui/releases/download/v0.1.2';
+const downloads = [
+  { label: 'macOS · Apple silicon', file: 'esvg-gui-v0.1.2-macos-aarch64.zip', format: 'ZIP' },
+  { label: 'Windows · x64', file: 'esvg-gui-v0.1.2-windows-x86_64.zip', format: 'ZIP' },
+  { label: 'Linux · x64', file: 'esvg-gui-v0.1.2-linux-x86_64.tar.gz', format: 'TAR.GZ' },
+];
+---
+
+<BaseLayout title="ESVG | Desktop SVG Optimization" description="Optimize SVGs on your desktop with ESVG. Preview results, process files in bulk, and export SVG, PNG, or React components. Powered by an original Rust engine.">
+  <section class="container py-16 sm:py-24">
+    <div class="flex items-center gap-4">
+      <img src="/images/esvg/esvg-icon.png" alt="" width="80" height="80" class="h-20 w-20" />
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Free Desktop SVG Optimization Utility</p>
+        <p class="mt-2 font-serif text-3xl text-ink">ESVG</p>
+      </div>
+    </div>
+    <h1 class="mt-10 max-w-4xl font-serif text-5xl leading-tight text-ink sm:text-7xl">Convenient SVG Optimization</h1>
+    <p class="mt-8 max-w-3xl text-xl leading-9 text-muted">Compare the original and optimized artwork, process one file or a batch, and export as SVG, PNG, or a React component.</p>
+    <div class="mt-10 flex flex-wrap gap-4">
+      <a href="#download" class="bg-ink px-6 py-3 text-sm font-medium text-paper transition hover:bg-button-hover">Download ESVG</a>
+      <a href="https://github.com/nikelaz/esvg-gui" class="border border-line px-6 py-3 text-sm font-medium text-ink transition hover:border-ink">View on GitHub <span aria-hidden="true">↗</span></a>
+    </div>
+    <p class="mt-5 text-sm text-muted">macOS, Windows, and Linux</p>
+    <figure class="mt-14">
+      <button type="button" aria-haspopup="dialog" aria-label="Open ESVG desktop screenshot in lightbox" data-lightbox class="block w-full cursor-zoom-in overflow-hidden rounded-xl border border-line shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink">
+        <img src="/images/esvg/esvg-gui-main-ui.png" alt="ESVG displaying a tiger illustration with original and optimized previews, file sizes, and optimization controls." width="3832" height="2054" class="block h-auto w-full" fetchpriority="high" />
+      </button>
+      <figcaption class="mt-4 text-sm leading-6 text-muted">Inspect your artwork, compare file sizes, and control individual optimization plugins.</figcaption>
+    </figure>
+  </section>
+
+  <section class="border-y border-line bg-white">
+    <div class="container grid gap-12 py-20 md:grid-cols-3">
+      <article>
+        <h2 class="font-serif text-3xl text-ink">Preview the result</h2>
+        <p class="mt-5 leading-8 text-muted">Switch between original and optimized views. Zoom and pan to inspect the details while keeping the size savings in sight.</p>
+      </article>
+      <article>
+        <h2 class="font-serif text-3xl text-ink">Choose what changes</h2>
+        <p class="mt-5 leading-8 text-muted">Toggle optimizations for paths, groups, colors, attributes, and more. Keep control over the transformations applied to your artwork.</p>
+      </article>
+      <article>
+        <h2 class="font-serif text-3xl text-ink">Export for your workflow</h2>
+        <p class="mt-5 leading-8 text-muted">Save an optimized SVG, export a PNG, or create a React/JSX component. Choose whether SVG exports include a viewBox and explicit dimensions.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="container py-20 sm:py-24">
+    <div class="max-w-3xl">
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Bulk optimization</p>
+      <h2 class="mt-5 font-serif text-4xl leading-tight text-ink sm:text-5xl">Give the whole collection a pass.</h2>
+      <p class="mt-6 text-lg leading-8 text-muted">Add multiple SVGs, inspect each result, and optimize and save them together. Set an output suffix and choose a destination folder for your exported files.</p>
+    </div>
+    <figure class="mt-10">
+      <button type="button" aria-haspopup="dialog" aria-label="Open ESVG bulk optimization screenshot in lightbox" data-lightbox class="block w-full cursor-zoom-in overflow-hidden rounded-xl border border-line focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink">
+        <img src="/images/esvg/esvg-bulk-optimization.png" alt="ESVG bulk optimization showing a collection of SVG files, individual size reductions, a preview, and output settings." width="3832" height="2052" class="block h-auto w-full" loading="lazy" />
+      </button>
+    </figure>
+    <div class="mt-16 grid items-center gap-10 md:grid-cols-2">
+      <div>
+        <h2 class="font-serif text-3xl text-ink sm:text-4xl">From vector asset to component.</h2>
+        <p class="mt-6 text-lg leading-8 text-muted">Keep your artwork in SVG, turn it into a PNG, or export it as a React/JSX component for your interface.</p>
+      </div>
+      <button type="button" aria-haspopup="dialog" aria-label="Open export format menu screenshot in lightbox" data-lightbox class="mx-auto block w-full max-w-md cursor-zoom-in focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ink">
+        <img src="/images/esvg/export-options.png" alt="Export format menu offering SVG, PNG, and React/JSX Component." width="632" height="479" class="mx-auto block h-auto w-full max-w-md rounded-xl border border-line" loading="lazy" />
+      </button>
+    </div>
+  </section>
+
+  <section class="border-y border-line bg-panel">
+    <div class="container grid gap-10 py-20 lg:grid-cols-2">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Written from scratch in Rust</p>
+        <h2 class="mt-5 font-serif text-4xl leading-tight text-ink sm:text-5xl">Competitive Transformer Optimization</h2>
+      </div>
+      <div class="space-y-6 text-lg leading-8 text-muted">
+        <p>At the core of ESVG is an original optimization engine. Its Arbiter compares candidate transformations and keeps the result that reduces file size, with the aim of preserving the appearance of the artwork.</p>
+        <p>Different transformations compete to improve the SVG. The engine selects the more efficient result and continues optimizing from there.</p>
+        <p>The desktop app and Rust optimizer are open source. Explore the code, report an issue, or follow their development.</p>
+        <div class="flex flex-wrap gap-6 text-sm font-semibold text-accent">
+          <a href="https://github.com/nikelaz/esvg-gui" class="underline underline-offset-4">Desktop app on GitHub ↗</a>
+          <a href="https://github.com/nikelaz/esvg-rs" class="underline underline-offset-4">Rust optimizer on GitHub ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="download" class="container scroll-mt-8 py-20 sm:py-24">
+    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-accent">Alpha release</p>
+    <h2 class="mt-5 font-serif text-4xl text-ink sm:text-5xl">Get ESVG for your desktop.</h2>
+    <p class="mt-6 text-lg leading-8 text-muted">Choose the download for your operating system and processor.</p>
+    <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {downloads.map((download) => (
+        <a href={`${downloadBase}/${download.file}`} class="border border-line bg-white p-6 transition hover:border-ink">
+          <span class="block text-lg font-semibold text-ink">{download.label}</span>
+          <span class="mt-4 block text-sm text-accent">Download {download.format} <span aria-hidden="true">↓</span></span>
+        </a>
+      ))}
+    </div>
+    <div class="mt-8 flex flex-wrap gap-6 text-sm text-muted">
+      <a href={releaseUrl} class="underline underline-offset-4">Release notes and all assets</a>
+      <a href="https://github.com/nikelaz/esvg-gui/issues" class="underline underline-offset-4">Report an issue</a>
+      <a href="/contact" class="underline underline-offset-4">Contact us</a>
+    </div>
+  </section>
+  <dialog id="esvg-lightbox" aria-label="ESVG image preview" class="fixed inset-0 m-0 h-full w-full max-h-none max-w-none overflow-hidden border-0 bg-transparent p-0">
+    <button id="esvg-lightbox-backdrop" type="button" tabindex="-1" aria-label="Close image preview" class="absolute inset-0 cursor-zoom-out bg-transparent"></button>
+    <div class="pointer-events-none relative z-10 flex h-full w-full items-center justify-center p-4">
+      <button id="esvg-lightbox-close" type="button" class="pointer-events-auto absolute right-4 top-4 rounded-full bg-paper px-4 py-2 text-sm font-medium text-ink shadow-lg">Close</button>
+      <img id="esvg-lightbox-image" alt="" class="pointer-events-auto max-h-[90vh] max-w-full object-contain shadow-2xl" />
+    </div>
+  </dialog>
+
+  <script>
+    const lightbox = document.getElementById('esvg-lightbox') as HTMLDialogElement | null;
+    const lightboxImage = document.getElementById('esvg-lightbox-image') as HTMLImageElement | null;
+    const lightboxClose = document.getElementById('esvg-lightbox-close');
+    const lightboxBackdrop = document.getElementById('esvg-lightbox-backdrop');
+    const lightboxTriggers = document.querySelectorAll<HTMLButtonElement>('[data-lightbox]');
+
+    for (const trigger of lightboxTriggers) {
+      const image = trigger.querySelector<HTMLImageElement>('img');
+      trigger.addEventListener('click', () => {
+        if (!lightbox || !lightboxImage || !image) return;
+        lightboxImage.src = image.src;
+        lightboxImage.alt = image.alt;
+        lightbox.showModal();
+      });
+    }
+
+    lightboxClose?.addEventListener('click', () => lightbox?.close());
+    lightboxBackdrop?.addEventListener('click', () => lightbox?.close());
+  </script>
+
+  <style is:global>
+    #esvg-lightbox::backdrop {
+      background: transparent;
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
+    }
+  </style>
+
+</BaseLayout>

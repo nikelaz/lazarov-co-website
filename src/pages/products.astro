@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Products | Lazarov & Co Ltd." description="Explore Budget Warden and Voice Ready, focused software products built by Lazarov & Co Ltd.">
+<BaseLayout title="Products | Lazarov & Co Ltd." description="Explore Budget Warden, Voice Ready, and ESVG, focused software products built by Lazarov & Co Ltd.">
   <section class="container py-20">
     <p class="mb-6 text-xs font-semibold uppercase tracking-[0.24em] text-accent">Products</p>
     <h1 class="font-serif text-4xl leading-tight text-ink sm:text-6xl">Small Focused Tools</h1>
@@ -42,6 +42,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <span class="border border-line px-3 py-2">macOS demo</span><span class="border border-line px-3 py-2">Windows</span><span class="border border-dashed border-line px-3 py-2">Linux soon</span>
         </div>
         <a href="/voice-ready" class="mt-10 inline-flex items-center gap-3 border border-ink px-6 py-3 text-sm font-medium text-ink transition hover:bg-ink hover:text-paper">Discover Voice Ready <span aria-hidden="true">→</span></a>
+      </article>
+      <article class="border border-line bg-white p-8 sm:p-12">
+        <div class="flex items-center gap-4">
+          <img src="/images/esvg/esvg-icon.png" alt="" class="h-14 w-14" width="56" height="56" />
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-[#355F8E]">Open source</p>
+            <h2 class="mt-1 font-serif text-4xl text-ink">ESVG</h2>
+          </div>
+        </div>
+        <p class="mt-8 text-xl leading-8 text-ink">Choose which optimizations to apply.</p>
+        <p class="mt-5 leading-8 text-muted">Compare original and optimized artwork, process a file or a batch, and export as SVG, PNG, or React components.</p>
+        <div class="mt-8 flex flex-wrap gap-2 text-xs font-medium uppercase tracking-wider text-muted">
+          <span class="border border-line px-3 py-2">macOS</span><span class="border border-line px-3 py-2">Windows</span><span class="border border-line px-3 py-2">Linux</span>
+        </div>
+        <a href="/products/esvg" class="mt-10 inline-flex items-center gap-3 border border-ink px-6 py-3 text-sm font-medium text-ink transition hover:bg-ink hover:text-paper">Explore ESVG <span aria-hidden="true">→</span></a>
       </article>
   </section>
 </BaseLayout>

@@ -40,7 +40,7 @@ const productsActive = currentPath.startsWith('/products') || currentPath.starts
           <svg aria-hidden="true" viewBox="0 0 24 24" class="h-5 w-5 fill-none stroke-current"><path d="m6 6 12 12M18 6 6 18" stroke-width="1.5" /></svg>
         </button>
       </div>
-      <div class="grid gap-4 md:grid-cols-2">
+      <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         <a href="/products/budget-warden" class="group flex gap-5 border border-line bg-paper p-5 transition hover:bg-white sm:p-6">
           <img src="/images/budget-warden-icon.svg" alt="" class="h-12 w-12 shrink-0 rounded-xl" width="48" height="48" />
           <span>
@@ -55,6 +55,13 @@ const productsActive = currentPath.startsWith('/products') || currentPath.starts
           <span>
             <span class="flex min-h-7 flex-wrap items-center gap-2 text-xl font-semibold leading-none text-ink">Voice Ready <span class="inline-flex h-5 translate-y-0.5 items-center text-xs font-medium uppercase leading-none tracking-wider text-accent">Free demo</span></span>
             <span class="mt-2 block leading-7 text-muted">Make spoken audio cleaner, balanced, and ready to publish.</span>
+          </span>
+        </a>
+        <a href="/products/esvg" class="group flex gap-5 border border-line bg-paper p-5 transition hover:bg-white sm:p-6">
+          <img src="/images/esvg/esvg-icon.png" alt="" class="h-12 w-12 shrink-0" width="48" height="48" />
+          <span>
+            <span class="flex flex-wrap items-center gap-2 text-xl font-semibold text-ink">ESVG <span aria-hidden="true" class="transition group-hover:translate-x-1">→</span></span>
+            <span class="mt-2 block leading-7 text-muted">Desktop SVG Optimization Utility</span>
           </span>
         </a>
       </div>
